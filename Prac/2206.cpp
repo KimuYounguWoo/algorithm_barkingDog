@@ -43,26 +43,19 @@ int main() {
             for (int j=i; j<sizes; j++) {
                 if (trans[i].x == trans[j].x) {
                     ccc[i][j][0][0] += j-i;
-                    swap(trans[i].x, trans[j].x);
-                    cout << "1 test= " << ccc[i][j][0][0] << '\n';
                 }
                 if (trans[i].x == trans[j].y) {
                     ccc[i][j][0][1] += j-i;
-                    swap(trans[i].x, trans[j].y);
-                    cout << "2 test= " << ccc[i][j][0][1] << '\n';
                 }
                 if (trans[i].y == trans[j].x) {
                     ccc[i][j][1][0] += j-i;
-                    swap(trans[i].y, trans[j].x);
-                    cout << "3 test=  " << ccc[i][j][1][0] << '\n';
                     }
                 if (trans[i].y == trans[j].y) {
                     ccc[i][j][1][1] += j-i;
-                    swap(trans[i].y, trans[j].y);
-                    cout << "4 test=  " << ccc[i][j][1][1] << '\n';
                     }
-                cnt += min({ccc[i][j][0][0], ccc[i][j][0][1], ccc[i][j][1][0], ccc[i][j][1][1]});
-            }
+                int tmp = min({ccc[i][j][0][0], ccc[i][j][0][1], ccc[i][j][1][0], ccc[i][j][1][1]});
+                cnt += tmp;
+                            }
         }
     }    
             for (int i=0; i<4; i++) {
